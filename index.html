@@ -112,7 +112,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
       <label for="lh">≡</label>
       <input type="range" id="lh" min="1.5" max="2.4" value="1.8" step="0.1" oninput="updateLH()">
     </div>
-    <span id="counter">1 / 10</span>
+    <span id="counter">1 / 12</span>
   </div>
 
   <div id="progress-bar"><div id="progress-fill"></div></div>
@@ -120,47 +120,54 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   <div id="scroll-area">
 
     <div class="para current" id="p0" onclick="jump(0)">
-      Madam Executive Vice-President, dear colleagues,
+      Good morning, everyone.
     </div>
 
     <div class="para upcoming" id="p1" onclick="jump(1)">
-      I am Mathieu Kessler, Rector of the Universidad Politécnica de Cartagena, a member of EUt+, the European University of Technology.
+      It is a pleasure for the Universidad Politécnica de Cartagena to welcome you to the II International Symposium on Green and Sustainable Chemistry 2026.
     </div>
 
     <div class="para upcoming" id="p2" onclick="jump(2)">
-      Until recently, a fully-fledged European Degree was still a distant political ambition. Today, in engineering, this is changing. It is becoming concrete, legally feasible, ready to move from vision to implementation. There is now an opportunity to overcome the obstacles of a recognition process that still varies depending on the objective: continuing one's studies, entering a public-service competition, or practising a profession.
+      I will not be very original if I say that we are living in a time of major challenges — energy, sustainability, technology, climate, resources. I am not saying that the challenges we face today are greater than those faced by previous generations. Every generation has had its own difficulties. But it is clear that we, as a society, must find our way through all these changes and challenges.
     </div>
 
     <div class="para upcoming" id="p3" onclick="jump(3)">
-      EUt+, together with EELISA and ECIU, is building a European Engineering Degree — based on existing accredited programmes, shared quality assurance references, and a plurinational awarding mechanism — that gives graduates legal recognition in several countries at once. This goes far beyond a label. Students following a standard engineering pathway, enriched with strong European experiences, would receive a degree with legal effects in several European countries. This is not only recognition attached to a national diploma: it is the beginning of a true European Degree.
+      And if there is one thing we should be clear about, it is that we will not do this without science.
     </div>
 
     <div class="para upcoming" id="p4" onclick="jump(4)">
-      This route is already possible in France and Spain. Discussions are underway with Italy and Romania. It can be extended to all countries willing to join. And from next year, the first students will be admitted with the aim of receiving this plurinational degree.
+      It is true that some of the greatest challenges we face today are linked to technology itself. But it is equally true that, when guided by the right principles and values, science and technology are also key to the solutions — solutions that help us take better care of people, of resources, and of the environment.
     </div>
 
     <div class="para upcoming" id="p5" onclick="jump(5)">
-      European University alliances are particularly well placed for this work. They are experimental grounds, policy labs, pioneers and incubators of what European higher education could become. They combine institutional trust, academic depth, shared governance, mobility pathways, and day-to-day operational cooperation — and can test ambitious ideas without losing touch with the reality of universities, programmes, students and staff.
+      Science is essential. Not as an abstract idea, but as a practical way to understand problems better and to find real solutions. Looking at the programme, it is very clear that the discussions you will have here over these days are precisely about that: solutions. Better technologies, more sustainable systems, more efficient ways of doing things.
     </div>
 
     <div class="para upcoming" id="p6" onclick="jump(6)">
-      This is why the model can be both visionary and practical. It builds on existing degrees, existing quality assurance frameworks, existing institutional capacity — but connects them differently, at European scale. This makes it scalable, far beyond the alliances themselves. It could also foster cross-fertilization among academic programmes, helping universities address the digital and ecological transitions more swiftly. A pan-European education accessible to all could give new impetus to European integration — encouraging multilingualism and advanced educational technologies.
+      So let me simply thank you for the work you do every day — in your labs, in your research groups, in your universities and institutions. Thank you for the solutions you help develop, for the progress you make possible, and for the knowledge you contribute to society.
     </div>
 
     <div class="para upcoming" id="p7" onclick="jump(7)">
-      <div class="tag tag-close">Closing</div><br>
-      This changes the nature of the discussion. The European Degree is no longer only a question of political vision. It becomes a question of academic development, legal implementation, and strategic support. We now have the framework to create, at least in engineering, a kind of Schengen Area of diplomas — perhaps even the Airbus of engineering master's degrees.
+      And thank you for coming here to share ideas, discuss together, and continue building better solutions collaboratively.
     </div>
 
     <div class="para upcoming" id="p8" onclick="jump(8)">
-      <div class="tag tag-close">Closing</div><br>
-      For Europe, this is not only an education initiative. It is a powerful instrument for STEM talent, innovation, industrial competitiveness, reindustrialisation, and strategic autonomy — fully aligned with the Union of Skills and Europe's broader competitiveness agenda.
+      I would also like to thank the organizers for making this symposium possible.
     </div>
 
     <div class="para upcoming" id="p9" onclick="jump(9)">
-      <div class="tag tag-q">Question</div><br>
-      My question is therefore simple:<br><br>
-      Will the Commission publicly support this model as the first scalable pathway towards a true European Degree — and help elevate it from an Erasmus+ success story into a core instrument of Europe's innovation, competitiveness, and technological sovereignty?
+      <div class="tag tag-close">Closing</div><br>
+      Our university has now had the privilege of hosting both editions of this symposium. I think that is starting to look like a tradition. So let me say that we would be very happy to continue being its home in the future.
+    </div>
+
+    <div class="para upcoming" id="p10" onclick="jump(10)">
+      <div class="tag tag-close">Closing</div><br>
+      I wish you all a very productive and inspiring few days.
+    </div>
+
+    <div class="para upcoming" id="p11" onclick="jump(11)">
+      <div class="tag tag-close">Closing</div><br>
+      Thank you, and welcome to Cartagena.
     </div>
 
   </div>
@@ -173,7 +180,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
 </div>
 <script>
 var current = 0;
-var total = 10;
+var total = 12;
 
 function updateCounter() {
   document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
@@ -183,8 +190,6 @@ function updateCounter() {
 }
 
 function jump(i) {
-  var old = document.getElementById('p' + current);
-  if (old) old.className = i < current ? 'para done' : (i > current ? 'para upcoming' : 'para current');
   current = i;
   for (var j = 0; j < total; j++) {
     var el = document.getElementById('p' + j);
