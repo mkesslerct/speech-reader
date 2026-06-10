@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="My Speech">
+<title>My Speech</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+:root {
+  --bg: #ffffff;
+  --bg2: #f5f5f4;
+  --text: #1a1a18;
+  --muted: #6b6b67;
+  --border: rgba(0,0,0,0.1);
+  --accent: #185fa5;
+  --done: #b4b2a9;
+  --current-bg: #f0f4fa;
+  --current-border: #b5d4f4;
+  --tag-q-bg: #faeeda; --tag-q-text: #633806;
+  --tag-close-bg: #eaf3de; --tag-close-text: #27500a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1c1a; --bg2: #2a2a27;
+    --text: #f0ede8; --muted: #888780;
+    --border: rgba(255,255,255,0.1);
+    --accent: #85b7eb; --done: #444441;
+    --current-bg: #0c2240; --current-border: #185fa5;
+    --tag-q-bg: #412402; --tag-q-text: #fac775;
+    --tag-close-bg: #173404; --tag-close-text: #c0dd97;
+  }
+}
+
+html, body { height: 100%; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; overflow: hidden; }
+
+#app { display: flex; flex-direction: column; height: 100%; height: 100dvh; }
+
+#settings {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px 10px; border-bottom: 0.5px solid var(--border);
+  background: var(--bg); flex-shrink: 0;
+}
+#settings label { font-size: 12px; color: var(--muted); }
+#settings input[type=range] {
+  -webkit-appearance: none; height: 4px; border-radius: 2px;
+  background: var(--border); outline: none; width: 80px;
+}
+#settings input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 20px; height: 20px;
+  border-radius: 50%; background: var(--accent);
+}
+.sg { display: flex; align-items: center; gap: 6px; }
+.sval { font-size: 12px; color: var(--muted); min-width: 28px; }
+#counter { font-size: 12px; color: var(--muted); margin-left: auto; }
+
+#progress-bar { height: 3px; background: var(--border); flex-shrink: 0; }
+#progress-fill { height: 100%; background: var(--accent); transition: width 0.3s; width: 10%; }
+
+#scroll-area { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 12px 16px 16px; }
+
+.para {
+  padding: 14px 12px; margin-bottom: 6px; border-radius: 10px;
+  border: 0.5px solid transparent; cursor: pointer;
+  line-height: 1.8; font-size: 20px;
+}
+.para.done    { color: var(--done); opacity: 0.55; }
+.para.upcoming { color: var(--text); opacity: 0.7; }
+.para.current {
+  background: var(--current-bg); border-color: var(--current-border);
+  opacity: 1; color: var(--text);
+}
+
+.tag {
+  display: inline-block; font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.07em;
+  padding: 2px 8px; border-radius: 99px; margin-bottom: 7px;
+}
+.tag-q     { background: var(--tag-q-bg);     color: var(--tag-q-text); }
+.tag-close { background: var(--tag-close-bg); color: var(--tag-close-text); }
+
+#nav {
+  display: flex; align-items: center; padding: 10px 16px;
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
+  border-top: 0.5px solid var(--border); background: var(--bg);
+  gap: 10px; flex-shrink: 0;
+}
+#nav button {
+  flex: 1; padding: 13px 0; font-size: 16px; font-weight: 500;
+  border: 0.5px solid var(--border); border-radius: 10px;
+  background: var(--bg2); color: var(--text); cursor: pointer;
+}
+#nav button:active { opacity: 0.6; }
+#nav button:disabled { opacity: 0.25; }
+#nav button#nextBtn { background: var(--accent); color: #fff; border-color: transparent; flex: 2; }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <div id="settings">
+    <div class="sg">
+      <label for="fsize">A</label>
+      <input type="range" id="fsize" min="16" max="28" value="20" step="1" oninput="updateSize()">
+      <span class="sval" id="fsizeval">20px</span>
+    </div>
+    <div class="sg">
+      <label for="lh">≡</label>
+      <input type="range" id="lh" min="1.5" max="2.4" value="1.8" step="0.1" oninput="updateLH()">
+    </div>
+    <span id="counter">1 / 10</span>
+  </div>
+
+  <div id="progress-bar"><div id="progress-fill"></div></div>
+
+  <div id="scroll-area">
+
+    <div class="para current" id="p0" onclick="jump(0)">
+      Madam Executive Vice-President, dear colleagues,
+    </div>
+
+    <div class="para upcoming" id="p1" onclick="jump(1)">
+      I am Mathieu Kessler, Rector of the Universidad Politécnica de Cartagena, a member of EUt+, the European University of Technology.
+    </div>
+
+    <div class="para upcoming" id="p2" onclick="jump(2)">
+      Until recently, a fully-fledged European Degree was still a distant political ambition. Today, in engineering, this is changing. It is becoming concrete, legally feasible, ready to move from vision to implementation. There is now an opportunity to overcome the obstacles of a recognition process that still varies depending on the objective: continuing one's studies, entering a public-service competition, or practising a profession.
+    </div>
+
+    <div class="para upcoming" id="p3" onclick="jump(3)">
+      EUt+, together with EELISA and ECIU, is building a European Engineering Degree — based on existing accredited programmes, shared quality assurance references, and a plurinational awarding mechanism — that gives graduates legal recognition in several countries at once. This goes far beyond a label. Students following a standard engineering pathway, enriched with strong European experiences, would receive a degree with legal effects in several European countries. This is not only recognition attached to a national diploma: it is the beginning of a true European Degree.
+    </div>
+
+    <div class="para upcoming" id="p4" onclick="jump(4)">
+      This route is already possible in France and Spain. Discussions are underway with Italy and Romania. It can be extended to all countries willing to join. And from next year, the first students will be admitted with the aim of receiving this plurinational degree.
+    </div>
+
+    <div class="para upcoming" id="p5" onclick="jump(5)">
+      European University alliances are particularly well placed for this work. They are experimental grounds, policy labs, pioneers and incubators of what European higher education could become. They combine institutional trust, academic depth, shared governance, mobility pathways, and day-to-day operational cooperation — and can test ambitious ideas without losing touch with the reality of universities, programmes, students and staff.
+    </div>
+
+    <div class="para upcoming" id="p6" onclick="jump(6)">
+      This is why the model can be both visionary and practical. It builds on existing degrees, existing quality assurance frameworks, existing institutional capacity — but connects them differently, at European scale. This makes it scalable, far beyond the alliances themselves. It could also foster cross-fertilization among academic programmes, helping universities address the digital and ecological transitions more swiftly. A pan-European education accessible to all could give new impetus to European integration — encouraging multilingualism and advanced educational technologies.
+    </div>
+
+    <div class="para upcoming" id="p7" onclick="jump(7)">
+      <div class="tag tag-close">Closing</div><br>
+      This changes the nature of the discussion. The European Degree is no longer only a question of political vision. It becomes a question of academic development, legal implementation, and strategic support. We now have the framework to create, at least in engineering, a kind of Schengen Area of diplomas — perhaps even the Airbus of engineering master's degrees.
+    </div>
+
+    <div class="para upcoming" id="p8" onclick="jump(8)">
+      <div class="tag tag-close">Closing</div><br>
+      For Europe, this is not only an education initiative. It is a powerful instrument for STEM talent, innovation, industrial competitiveness, reindustrialisation, and strategic autonomy — fully aligned with the Union of Skills and Europe's broader competitiveness agenda.
+    </div>
+
+    <div class="para upcoming" id="p9" onclick="jump(9)">
+      <div class="tag tag-q">Question</div><br>
+      My question is therefore simple:<br><br>
+      Will the Commission publicly support this model as the first scalable pathway towards a true European Degree — and help elevate it from an Erasmus+ success story into a core instrument of Europe's innovation, competitiveness, and technological sovereignty?
+    </div>
+
+  </div>
+
+  <div id="nav">
+    <button id="prevBtn" onclick="move(-1)" disabled>← Back</button>
+    <button id="nextBtn" onclick="move(1)">Next →</button>
+  </div>
+
+</div>
+<script>
+var current = 0;
+var total = 10;
+
+function updateCounter() {
+  document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
+  document.getElementById('progress-fill').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+}
+
+function jump(i) {
+  var old = document.getElementById('p' + current);
+  if (old) old.className = i < current ? 'para done' : (i > current ? 'para upcoming' : 'para current');
+  current = i;
+  for (var j = 0; j < total; j++) {
+    var el = document.getElementById('p' + j);
+    if (!el) continue;
+    if (j < current) el.className = 'para done';
+    else if (j === current) el.className = 'para current';
+    else el.className = 'para upcoming';
+  }
+  updateCounter();
+  var cur = document.getElementById('p' + current);
+  if (cur) cur.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function move(dir) {
+  var next = current + dir;
+  if (next < 0 || next >= total) return;
+  jump(next);
+}
+
+function updateSize() {
+  var v = document.getElementById('fsize').value;
+  document.getElementById('fsizeval').textContent = v + 'px';
+  var paras = document.querySelectorAll('.para');
+  for (var i = 0; i < paras.length; i++) paras[i].style.fontSize = v + 'px';
+}
+
+function updateLH() {
+  var v = document.getElementById('lh').value;
+  var paras = document.querySelectorAll('.para');
+  for (var i = 0; i < paras.length; i++) paras[i].style.lineHeight = v;
+}
+
+updateCounter();
+</script>
+</body>
+</html>
