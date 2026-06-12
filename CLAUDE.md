@@ -114,6 +114,16 @@ index.html       ← the phone reader (generated/updated by this agent)
 CLAUDE.md        ← this file (auto-loaded by Claude Code)
 ```
 
+### Speech source files
+
+Mathieu's speech drafts are Markdown files stored at:
+
+```
+/Users/mkessler/Library/Mobile Documents/iCloud~md~obsidian/Documents/obnotes/saludas_palabras/
+```
+
+When Mathieu mentions a filename (e.g. `202606115-open-quantum-systems`), look for it there — with or without the `.md` extension.
+
 ---
 
 ## 5. INTERACTION STYLE
