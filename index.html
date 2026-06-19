@@ -63,6 +63,12 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
 
 #scroll-area { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 12px 16px 16px; }
 
+.section-header {
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--muted);
+  padding: 20px 12px 6px; margin-top: 4px;
+}
+
 .para {
   padding: 14px 12px; margin-bottom: 6px; border-radius: 10px;
   border: 0.5px solid transparent; cursor: pointer;
@@ -109,10 +115,10 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
       <span class="sval" id="fsizeval">20px</span>
     </div>
     <div class="sg">
-      <label for="lh">≡</label>
+      <label for="lh">&#8801;</label>
       <input type="range" id="lh" min="1.5" max="2.4" value="1.8" step="0.1" oninput="updateLH()">
     </div>
-    <span id="counter">1 / 9</span>
+    <span id="counter">1 / 13</span>
   </div>
 
   <div id="progress-bar"><div id="progress-fill"></div></div>
@@ -120,54 +126,76 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   <div id="scroll-area">
 
     <div class="para current" id="p0" onclick="jump(0)">
-      Buenas tardes a todos.
+      Buenos días / Buenas tardes a todos.
     </div>
 
+    <div class="section-header">Primer mensaje: el talento está uniformemente distribuido</div>
+
     <div class="para upcoming" id="p1" onclick="jump(1)">
-      Es un placer para la Universidad Politécnica de Cartagena acogerles en esta jornada técnica. Quiero agradecer, en primer lugar, a la Dirección General de Política Energética y Minas del Ministerio para la Transición Ecológica su propuesta de presentar este manual aquí, en nuestra Universidad — no es una elección casual, y para nosotros es motivo de orgullo.
+      El talento no entiende de género. Ni de origen, ni de país. Está distribuido de forma bastante uniforme entre todos los grupos humanos. Y sin embargo, en la ingeniería — los datos de nuestra propia universidad lo confirman — hay una brecha enorme entre esa distribución del talento y su presencia real en la profesión.
     </div>
 
     <div class="para upcoming" id="p2" onclick="jump(2)">
-      El documento que hoy se presenta responde a un problema muy concreto: en España hay instalaciones de residuos mineros abandonadas, heredadas de una actividad que durante décadas fue motor económico de muchos territorios, entre ellos el nuestro.
+      No podemos permitirnos ese despilfarro. Como sociedad necesitamos todo el talento disponible. Y las vocaciones que se pierden — por prejuicios, por estereotipos, por falta de referentes cercanos — son una pérdida real. No solo para quien las pierde, sino para todos nosotros.
     </div>
 
     <div class="para upcoming" id="p3" onclick="jump(3)">
-      Son retos del presente, pero tienen su origen en acciones del pasado. Y esto nos enseña algo importante: las decisiones que tomamos hoy — cómo producimos, cómo extraemos, cómo restauramos — las heredarán las generaciones que vienen detrás.
+      Por eso son tan importantes iniciativas como la de hoy: visibilizar, invitar, explicar. Abrir los ojos a las oportunidades. Que una chica de dieciséis años vea que hay mujeres ingenieras que disfrutan de su trabajo y tienen impacto — eso cambia trayectorias.
     </div>
 
+    <div class="section-header">Segundo mensaje: la diversidad enriquece la ingeniería</div>
+
     <div class="para upcoming" id="p4" onclick="jump(4)">
-      Lo he dicho en otras ocasiones y lo repito hoy: no resolveremos los retos de nuestro tiempo sin ciencia y sin tecnología. No como una idea abstracta, sino como una manera práctica de entender mejor los problemas y de encontrar soluciones reales. Este manual es un buen ejemplo. Hace pocos años no estaba claro qué había que cumplir para restaurar y desclasificar estas instalaciones. Hoy existe una guía práctica que abre camino a nivel nacional.
+      Hay un segundo argumento, que va más allá del talento individual.
     </div>
 
     <div class="para upcoming" id="p5" onclick="jump(5)">
-      Y quiero detenerme un momento en cómo se ha hecho, porque me parece tan valioso como el resultado. Este manual es fruto de la colaboración entre tres agentes: el Ministerio y la Comunidad Autónoma, dos instituciones públicas, y nosotros, una universidad pública. Cada uno ha aportado lo que mejor sabe hacer: el impulso y los recursos, el conocimiento del territorio, y el rigor técnico y científico. Así es como se entiende la colaboración entre instituciones cuando el objetivo es el progreso y el bien de la sociedad. Ojalá este ejemplo se repita muchas veces.
+      La ingeniería no es una disciplina neutra. Absorbe los valores de la sociedad que sirve, interactúa con ellos. En el siglo XX, esos valores eran los de control, velocidad, innovación para el rendimiento. No es casualidad que correspondiera a una época en la que las mujeres estaban excluidas de la profesión.
     </div>
 
     <div class="para upcoming" id="p6" onclick="jump(6)">
-      Quiero reconocer de manera especial el trabajo del equipo liderado por el profesor Emilio Trigueros. Su labor en esta iniciativa, y en otras muchas, representa muy bien una de las grandes misiones de la universidad: que el conocimiento que se genera dentro de nuestras aulas y laboratorios salga fuera y sea útil a la sociedad a la que nos debemos. Las universidades politécnicas tenemos esta misión especialmente asumida. Nacimos para eso: para que el conocimiento se convierta en soluciones.
+      En las últimas décadas han irrumpido otros valores: la sostenibilidad, el mantenimiento, la atención a las consecuencias a largo plazo. Y tampoco es casualidad que en ese mismo período las mujeres hayan ganado presencia y peso en la ingeniería.
     </div>
 
     <div class="para upcoming" id="p7" onclick="jump(7)">
-      <div class="tag tag-close">Cierre</div><br>
-      Termino. Les deseo una jornada muy provechosa, y les digo lo mismo que digo siempre a quienes nos visitan: esta es su casa.
+      Incorporar más diversidad no es solo recuperar talento: es ampliar el tipo de preguntas que nos hacemos. Y eso produce mejor ingeniería.
     </div>
 
+    <div class="section-header">Tercer mensaje: la ingeniería tiene impacto, y eso engancha</div>
+
     <div class="para upcoming" id="p8" onclick="jump(8)">
+      Hay un tercer argumento — quizás el más universal.
+    </div>
+
+    <div class="para upcoming" id="p9" onclick="jump(9)">
+      Muchos de los argumentos que usamos para visibilizar el talento femenino en la ingeniería también sirven para promover la ingeniería en general. Porque la ingeniería permite trabajar en proyectos con impacto real: sobre las personas, sobre el territorio, sobre el futuro.
+    </div>
+
+    <div class="para upcoming" id="p10" onclick="jump(10)">
+      Y eso engancha. Trabajar como ingeniero o ingeniera genera, de manera natural, pasión y entusiasmo. Son profesiones que llenan — porque dan sentido al esfuerzo de estudiar, de pensar, de diseñar. Porque te permiten contribuir.
+    </div>
+
+    <div class="para upcoming" id="p11" onclick="jump(11)">
       <div class="tag tag-close">Cierre</div><br>
-      Muchas gracias, y bienvenidos a la Universidad Politécnica de Cartagena.
+      Ese es, en el fondo, el mejor argumento para que más jóvenes — chicos y chicas — elijan esta profesión.
+    </div>
+
+    <div class="para upcoming" id="p12" onclick="jump(12)">
+      <div class="tag tag-close">Cierre</div><br>
+      Muchas gracias.
     </div>
 
   </div>
 
   <div id="nav">
-    <button id="prevBtn" onclick="move(-1)" disabled>← Atrás</button>
-    <button id="nextBtn" onclick="move(1)">Siguiente →</button>
+    <button id="prevBtn" onclick="move(-1)" disabled>&#8592; Atrás</button>
+    <button id="nextBtn" onclick="move(1)">Siguiente &#8594;</button>
   </div>
 
 </div>
 <script>
 var current = 0;
-var total = 9;
+var total = 13;
 
 function updateCounter() {
   document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
