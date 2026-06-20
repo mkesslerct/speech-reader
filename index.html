@@ -63,12 +63,6 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
 
 #scroll-area { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 12px 16px 16px; }
 
-.section-header {
-  font-size: 11px; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.08em; color: var(--muted);
-  padding: 20px 12px 6px; margin-top: 4px;
-}
-
 .para {
   padding: 14px 12px; margin-bottom: 6px; border-radius: 10px;
   border: 0.5px solid transparent; cursor: pointer;
@@ -80,6 +74,9 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   background: var(--current-bg); border-color: var(--current-border);
   opacity: 1; color: var(--text);
 }
+
+.para ul { margin: 8px 0 0 24px; }
+.para ul li { margin-bottom: 4px; }
 
 .tag {
   display: inline-block; font-size: 10px; font-weight: 600;
@@ -118,7 +115,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
       <label for="lh">&#8801;</label>
       <input type="range" id="lh" min="1.5" max="2.4" value="1.8" step="0.1" oninput="updateLH()">
     </div>
-    <span id="counter">1 / 13</span>
+    <span id="counter">1 / 7</span>
   </div>
 
   <div id="progress-bar"><div id="progress-fill"></div></div>
@@ -126,63 +123,36 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   <div id="scroll-area">
 
     <div class="para current" id="p0" onclick="jump(0)">
-      Buenos días / Buenas tardes a todos.
+      Es un placer para mí estar hoy aquí. Como rector de la Universidad Politécnica de Cartagena — la universidad de adscripción del Centro Universitario de la Defensa — sois alumnos nuestros, y para nosotros es un enorme motivo de orgullo.
     </div>
 
-    <div class="section-header">Primer mensaje: el talento está uniformemente distribuido</div>
-
     <div class="para upcoming" id="p1" onclick="jump(1)">
-      El talento no entiende de género. Ni de origen, ni de país. Está distribuido de forma bastante uniforme entre todos los grupos humanos. Y sin embargo, en la ingeniería — los datos de nuestra propia universidad lo confirman — hay una brecha enorme entre esa distribución del talento y su presencia real en la profesión.
+      Seguro que sabéis que, hasta el momento, solo ha habido un poco más de diez promociones con este nuevo modelo de formación de oficiales, que se apoya en un doble pilar:
+      <ul>
+        <li>el pilar de la formación militar</li>
+        <li>el pilar de la formación universitaria</li>
+      </ul>
     </div>
 
     <div class="para upcoming" id="p2" onclick="jump(2)">
-      No podemos permitirnos ese despilfarro. Como sociedad necesitamos todo el talento disponible. Y las vocaciones que se pierden — por prejuicios, por estereotipos, por falta de referentes cercanos — son una pérdida real. No solo para quien las pierde, sino para todos nosotros.
+      ¿Qué visión está detrás de esta reforma? Seguramente, un oficial con un sólido conocimiento de la tecnología, una capacidad analítica profunda, entrenado para seguir aprendiendo, gestor de sistemas complejos.
     </div>
 
     <div class="para upcoming" id="p3" onclick="jump(3)">
-      Por eso son tan importantes iniciativas como la de hoy: visibilizar, invitar, explicar. Abrir los ojos a las oportunidades. Que una chica de dieciséis años vea que hay mujeres ingenieras que disfrutan de su trabajo y tienen impacto — eso cambia trayectorias.
+      Es una visión que ha resultado acertada, a la vista del papel tremendo de la tecnología en la defensa en la actualidad.
     </div>
 
-    <div class="section-header">Segundo mensaje: la diversidad enriquece la ingeniería</div>
-
     <div class="para upcoming" id="p4" onclick="jump(4)">
-      Hay un segundo argumento, que va más allá del talento individual.
+      Un acto como el de hoy refleja bien lo que puede dar de sí esta combinación entre la universidad y la academia. La Cátedra M. Torres — una de las 35 cátedras tecnológicas que nuestra universidad tiene con empresas — organiza esta jornada en la que empresas líderes en el sector aeronáutico presentan tendencias, avances y retos tecnológicos para el sector aeroespacial. Una actividad muy propia de la universidad, organizada en este caso para vosotros, nuestros alumnos, y traída aquí, a las instalaciones de la Academia.
     </div>
 
     <div class="para upcoming" id="p5" onclick="jump(5)">
-      La ingeniería no es una disciplina neutra. Absorbe los valores de la sociedad que sirve, interactúa con ellos. En el siglo XX, esos valores eran los de control, velocidad, innovación para el rendimiento. No es casualidad que correspondiera a una época en la que las mujeres estaban excluidas de la profesión.
+      Quiero felicitar a Paco Cavas, el director de la cátedra. Y quiero agradecer a las empresas que participan, así como la colaboración y la cercanía de la dirección de la AGA. Esta colaboración es la que nos permite trabajar juntos para ofrecer la mejor formación posible, militar y universitaria.
     </div>
 
     <div class="para upcoming" id="p6" onclick="jump(6)">
-      En las últimas décadas han irrumpido otros valores: la sostenibilidad, el mantenimiento, la atención a las consecuencias a largo plazo. Y tampoco es casualidad que en ese mismo período las mujeres hayan ganado presencia y peso en la ingeniería.
-    </div>
-
-    <div class="para upcoming" id="p7" onclick="jump(7)">
-      Incorporar más diversidad no es solo recuperar talento: es ampliar el tipo de preguntas que nos hacemos. Y eso produce mejor ingeniería.
-    </div>
-
-    <div class="section-header">Tercer mensaje: la ingeniería tiene impacto, y eso engancha</div>
-
-    <div class="para upcoming" id="p8" onclick="jump(8)">
-      Hay un tercer argumento — quizás el más universal.
-    </div>
-
-    <div class="para upcoming" id="p9" onclick="jump(9)">
-      Muchos de los argumentos que usamos para visibilizar el talento femenino en la ingeniería también sirven para promover la ingeniería en general. Porque la ingeniería permite trabajar en proyectos con impacto real: sobre las personas, sobre el territorio, sobre el futuro.
-    </div>
-
-    <div class="para upcoming" id="p10" onclick="jump(10)">
-      Y eso engancha. Trabajar como ingeniero o ingeniera genera, de manera natural, pasión y entusiasmo. Son profesiones que llenan — porque dan sentido al esfuerzo de estudiar, de pensar, de diseñar. Porque te permiten contribuir.
-    </div>
-
-    <div class="para upcoming" id="p11" onclick="jump(11)">
       <div class="tag tag-close">Cierre</div><br>
-      Ese es, en el fondo, el mejor argumento para que más jóvenes — chicos y chicas — elijan esta profesión.
-    </div>
-
-    <div class="para upcoming" id="p12" onclick="jump(12)">
-      <div class="tag tag-close">Cierre</div><br>
-      Muchas gracias.
+      Os deseo que la jornada resulte muy interesante. Entiendo que es una de las últimas actividades del curso académico — los alumnos de quinto ya están muy cerca del acto de graduación y entrega de despachos. Os veré allí. Y al resto, os deseo un feliz verano.
     </div>
 
   </div>
@@ -195,7 +165,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
 </div>
 <script>
 var current = 0;
-var total = 13;
+var total = 7;
 
 function updateCounter() {
   document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
