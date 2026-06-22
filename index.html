@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="My Speech">
-<title>My Speech</title>
+<meta name="apple-mobile-web-app-title" content="Blue Economy">
+<title>Blue Economy — MED-Hubs 2026</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
@@ -20,7 +20,6 @@
   --done: #b4b2a9;
   --current-bg: #f0f4fa;
   --current-border: #b5d4f4;
-  --tag-q-bg: #faeeda; --tag-q-text: #633806;
   --tag-close-bg: #eaf3de; --tag-close-text: #27500a;
 }
 
@@ -31,7 +30,6 @@
     --border: rgba(255,255,255,0.1);
     --accent: #85b7eb; --done: #444441;
     --current-bg: #0c2240; --current-border: #185fa5;
-    --tag-q-bg: #412402; --tag-q-text: #fac775;
     --tag-close-bg: #173404; --tag-close-text: #c0dd97;
   }
 }
@@ -75,15 +73,11 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   opacity: 1; color: var(--text);
 }
 
-.para ul { margin: 8px 0 0 24px; }
-.para ul li { margin-bottom: 4px; }
-
 .tag {
   display: inline-block; font-size: 10px; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.07em;
   padding: 2px 8px; border-radius: 99px; margin-bottom: 7px;
 }
-.tag-q     { background: var(--tag-q-bg);     color: var(--tag-q-text); }
 .tag-close { background: var(--tag-close-bg); color: var(--tag-close-text); }
 
 #nav {
@@ -112,10 +106,10 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
       <span class="sval" id="fsizeval">20px</span>
     </div>
     <div class="sg">
-      <label for="lh">&#8801;</label>
+      <label for="lh">≡</label>
       <input type="range" id="lh" min="1.5" max="2.4" value="1.8" step="0.1" oninput="updateLH()">
     </div>
-    <span id="counter">1 / 7</span>
+    <span id="counter">1 / 8</span>
   </div>
 
   <div id="progress-bar"><div id="progress-fill"></div></div>
@@ -123,49 +117,51 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   <div id="scroll-area">
 
     <div class="para current" id="p0" onclick="jump(0)">
-      Es un placer para mí estar hoy aquí. Como rector de la Universidad Politécnica de Cartagena — la universidad de adscripción del Centro Universitario de la Defensa — sois alumnos nuestros, y para nosotros es un enorme motivo de orgullo.
+      Good morning, everyone. On behalf of the Polytechnic University of Cartagena, it is my great pleasure to welcome you all to this Mediterranean Blue Economy Conference. We are truly honoured to host this event, and I hope that your time here in Cartagena will be both productive and enjoyable.
     </div>
 
     <div class="para upcoming" id="p1" onclick="jump(1)">
-      Seguro que sabéis que, hasta el momento, solo ha habido un poco más de diez promociones con este nuevo modelo de formación de oficiales, que se apoya en un doble pilar:
-      <ul>
-        <li>el pilar de la formación militar</li>
-        <li>el pilar de la formación universitaria</li>
-      </ul>
+      I think it is fair to say that few universities in Europe are as naturally predisposed to a conference on the blue economy as ours. Step outside this building and you will understand why. To one side, you have one of the most technologically advanced shipbuilding projects currently under way in Europe — the construction of the new submarine for the Spanish Navy. To the other, the sports and leisure port. And just beyond, the commercial harbour.
     </div>
 
     <div class="para upcoming" id="p2" onclick="jump(2)">
-      ¿Qué visión está detrás de esta reforma? Seguramente, un oficial con un sólido conocimiento de la tecnología, una capacidad analítica profunda, entrenado para seguir aprendiendo, gestor de sistemas complejos.
+      We are, quite literally, surrounded by the sea and by the industries, institutions, and communities that depend on it. This is not coincidence — it is the very essence of what this university is. UPCT was built on the idea that a technological university must be deeply rooted in its territory, in dialogue with the companies, institutions, and stakeholders that make up its economic and social fabric. The sea, in our case, is that fabric.
     </div>
 
     <div class="para upcoming" id="p3" onclick="jump(3)">
-      Es una visión que ha resultado acertada, a la vista del papel tremendo de la tecnología en la defensa en la actualidad.
+      It is therefore entirely fitting that we are associated with the MED-Hubs project and with this conference. Hosting you here is not simply a matter of providing a venue — it reflects a genuine strategic alignment. The work being done through MED-Hubs resonates directly with the specialisation lines of Campus Mare Nostrum and with the Smart Specialisation Strategy of the Region of Murcia, which identifies the blue economy as one of the key pillars for regional development and competitiveness. This conference sits at the intersection of European ambition and local reality, and that is precisely where universities like ours must be present.
     </div>
 
     <div class="para upcoming" id="p4" onclick="jump(4)">
-      Un acto como el de hoy refleja bien lo que puede dar de sí esta combinación entre la universidad y la academia. La Cátedra M. Torres — una de las 35 cátedras tecnológicas que nuestra universidad tiene con empresas — organiza esta jornada en la que empresas líderes en el sector aeronáutico presentan tendencias, avances y retos tecnológicos para el sector aeroespacial. Una actividad muy propia de la universidad, organizada en este caso para vosotros, nuestros alumnos, y traída aquí, a las instalaciones de la Academia.
+      Because there is something I believe deeply: progress in innovation — particularly the kind of technologically driven, sustainability-oriented innovation that the blue economy demands — cannot be achieved by any single actor working alone. It requires collaboration. It requires universities and research centres bringing rigour and knowledge. It requires companies and startups bringing agility and market vision. It requires public administrations creating the frameworks and the trust within which all of this can happen. And it requires the coastal communities — the fishers, the port workers, the local entrepreneurs — who are both the beneficiaries and the custodians of what we are trying to protect and develop.
     </div>
 
     <div class="para upcoming" id="p5" onclick="jump(5)">
-      Quiero felicitar a Paco Cavas, el director de la cátedra. Y quiero agradecer a las empresas que participan, así como la colaboración y la cercanía de la dirección de la AGA. Esta colaboración es la que nos permite trabajar juntos para ofrecer la mejor formación posible, militar y universitaria.
+      What MED-Hubs has done is create a space where all of these actors can meet, test ideas, and build something together across borders. That is no small achievement.
     </div>
 
     <div class="para upcoming" id="p6" onclick="jump(6)">
-      <div class="tag tag-close">Cierre</div><br>
-      Os deseo que la jornada resulte muy interesante. Entiendo que es una de las últimas actividades del curso académico — los alumnos de quinto ya están muy cerca del acto de graduación y entrega de despachos. Os veré allí. Y al resto, os deseo un feliz verano.
+      <div class="tag tag-close">Closing</div><br>
+      So I want to thank the organisers, the partners, and especially all of you who have travelled here from across the Mediterranean to share your expertise, your projects, and your perspectives. The debates ahead of us today are not only timely — they are necessary.
+    </div>
+
+    <div class="para upcoming" id="p7" onclick="jump(7)">
+      <div class="tag tag-close">Closing</div><br>
+      I wish you a very fruitful conference. And I hope that, beyond the sessions and the panels, you will also find a moment to discover our city. Cartagena has been welcoming people from across the Mediterranean for more than two thousand years. Today, it is delighted to do so once more.<br><br>
+      Thank you.
     </div>
 
   </div>
 
   <div id="nav">
-    <button id="prevBtn" onclick="move(-1)" disabled>&#8592; Atrás</button>
-    <button id="nextBtn" onclick="move(1)">Siguiente &#8594;</button>
+    <button id="prevBtn" onclick="move(-1)" disabled>← Back</button>
+    <button id="nextBtn" onclick="move(1)">Next →</button>
   </div>
 
 </div>
 <script>
 var current = 0;
-var total = 7;
+var total = 8;
 
 function updateCounter() {
   document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
