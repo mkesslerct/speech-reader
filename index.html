@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Mujer Ingeniera">
-<title>Mujer Ingeniera — COIIRM 2026</title>
+<meta name="apple-mobile-web-app-title" content="Blue Economy">
+<title>Blue Economy — MED-Hubs 2026</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
@@ -20,7 +20,6 @@
   --done: #b4b2a9;
   --current-bg: #f0f4fa;
   --current-border: #b5d4f4;
-  --tag-h-bg: #e8eaf6; --tag-h-text: #1a237e;
   --tag-close-bg: #eaf3de; --tag-close-text: #27500a;
 }
 
@@ -31,7 +30,6 @@
     --border: rgba(255,255,255,0.1);
     --accent: #85b7eb; --done: #444441;
     --current-bg: #0c2240; --current-border: #185fa5;
-    --tag-h-bg: #1a1f5e; --tag-h-text: #9fa8da;
     --tag-close-bg: #173404; --tag-close-text: #c0dd97;
   }
 }
@@ -80,7 +78,6 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   text-transform: uppercase; letter-spacing: 0.07em;
   padding: 2px 8px; border-radius: 99px; margin-bottom: 7px;
 }
-.tag-h     { background: var(--tag-h-bg);     color: var(--tag-h-text); }
 .tag-close { background: var(--tag-close-bg); color: var(--tag-close-text); }
 
 #nav {
@@ -112,7 +109,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
       <label for="lh">≡</label>
       <input type="range" id="lh" min="1.5" max="2.4" value="1.8" step="0.1" oninput="updateLH()">
     </div>
-    <span id="counter">1 / 13</span>
+    <span id="counter">1 / 8</span>
   </div>
 
   <div id="progress-bar"><div id="progress-fill"></div></div>
@@ -120,75 +117,51 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   <div id="scroll-area">
 
     <div class="para current" id="p0" onclick="jump(0)">
-      Buenos días / Buenas tardes a todos.
+      Good morning, everyone. On behalf of the Polytechnic University of Cartagena, it is my great pleasure to welcome you all to this Mediterranean Blue Economy Conference. We are truly honoured to host this event, and I hope that your time here in Cartagena will be both productive and enjoyable.
     </div>
 
     <div class="para upcoming" id="p1" onclick="jump(1)">
-      <div class="tag tag-h">Primer mensaje</div><br>
-      El talento está uniformemente distribuido
+      I think it is fair to say that few universities in Europe are as naturally predisposed to a conference on the blue economy as ours. Step outside this building and you will understand why. To one side, you have one of the most technologically advanced shipbuilding projects currently under way in Europe — the construction of the new submarine for the Spanish Navy. To the other, the sports and leisure port. And just beyond, the commercial harbour.
     </div>
 
     <div class="para upcoming" id="p2" onclick="jump(2)">
-      El talento no entiende de género. Ni de origen, ni de país. Está distribuido de forma bastante uniforme entre todos los grupos humanos. Y sin embargo, en la ingeniería — los datos de nuestra propia universidad lo confirman — hay una brecha enorme entre esa distribución del talento y su presencia real en la profesión.
+      We are, quite literally, surrounded by the sea and by the industries, institutions, and communities that depend on it. This is not coincidence — it is the very essence of what this university is. UPCT was built on the idea that a technological university must be deeply rooted in its territory, in dialogue with the companies, institutions, and stakeholders that make up its economic and social fabric. The sea, in our case, is that fabric.
     </div>
 
     <div class="para upcoming" id="p3" onclick="jump(3)">
-      No podemos permitirnos ese despilfarro. Como sociedad necesitamos todo el talento disponible. Y las vocaciones que se pierden — por prejuicios, por estereotipos, por falta de referentes cercanos — son una pérdida real. No solo para quien las pierde, sino para todos nosotros.
+      It is therefore entirely fitting that we are associated with the MED-Hubs project and with this conference. Hosting you here is not simply a matter of providing a venue — it reflects a genuine strategic alignment. The work being done through MED-Hubs resonates directly with the specialisation lines of Campus Mare Nostrum and with the Smart Specialisation Strategy of the Region of Murcia, which identifies the blue economy as one of the key pillars for regional development and competitiveness. This conference sits at the intersection of European ambition and local reality, and that is precisely where universities like ours must be present.
     </div>
 
     <div class="para upcoming" id="p4" onclick="jump(4)">
-      Por eso son tan importantes iniciativas como la de hoy: visibilizar, invitar, explicar. Abrir los ojos a las oportunidades. Que una chica de dieciséis años vea que hay mujeres ingenieras que disfrutan de su trabajo y tienen impacto — eso cambia trayectorias.
+      Because there is something I believe deeply: progress in innovation — particularly the kind of technologically driven, sustainability-oriented innovation that the blue economy demands — cannot be achieved by any single actor working alone. It requires collaboration. It requires universities and research centres bringing rigour and knowledge. It requires companies and startups bringing agility and market vision. It requires public administrations creating the frameworks and the trust within which all of this can happen. And it requires the coastal communities — the fishers, the port workers, the local entrepreneurs — who are both the beneficiaries and the custodians of what we are trying to protect and develop.
     </div>
 
     <div class="para upcoming" id="p5" onclick="jump(5)">
-      <div class="tag tag-h">Segundo mensaje</div><br>
-      La diversidad enriquece la ingeniería
+      What MED-Hubs has done is create a space where all of these actors can meet, test ideas, and build something together across borders. That is no small achievement.
     </div>
 
     <div class="para upcoming" id="p6" onclick="jump(6)">
-      Hay un segundo argumento, que va más allá del talento individual.<br><br>
-      La ingeniería no es una disciplina neutra. Absorbe los valores de la sociedad que sirve, interactúa con ellos. En el siglo XX, esos valores eran los de control, velocidad, innovación para el rendimiento. No es casualidad que correspondiera a una época en la que las mujeres estaban excluidas de la profesión.
+      <div class="tag tag-close">Closing</div><br>
+      So I want to thank the organisers, the partners, and especially all of you who have travelled here from across the Mediterranean to share your expertise, your projects, and your perspectives. The debates ahead of us today are not only timely — they are necessary.
     </div>
 
     <div class="para upcoming" id="p7" onclick="jump(7)">
-      En las últimas décadas han irrumpido otros valores: la sostenibilidad, el mantenimiento, la atención a las consecuencias a largo plazo. Y tampoco es casualidad que en ese mismo período las mujeres hayan ganado presencia y peso en la ingeniería.
-    </div>
-
-    <div class="para upcoming" id="p8" onclick="jump(8)">
-      Incorporar más diversidad no es solo recuperar talento: es ampliar el tipo de preguntas que nos hacemos. Y eso produce mejor ingeniería.
-    </div>
-
-    <div class="para upcoming" id="p9" onclick="jump(9)">
-      <div class="tag tag-h">Tercer mensaje</div><br>
-      La ingeniería tiene impacto, y eso engancha
-    </div>
-
-    <div class="para upcoming" id="p10" onclick="jump(10)">
-      Hay un tercer argumento — quizás el más universal.<br><br>
-      Muchos de los argumentos que usamos para visibilizar el talento femenino en la ingeniería también sirven para promover la ingeniería en general. Porque la ingeniería permite trabajar en proyectos con impacto real: sobre las personas, sobre el territorio, sobre el futuro.
-    </div>
-
-    <div class="para upcoming" id="p11" onclick="jump(11)">
-      Y eso engancha. Trabajar como ingeniero o ingeniera genera, de manera natural, pasión y entusiasmo. Son profesiones que llenan — porque dan sentido al esfuerzo de estudiar, de pensar, de diseñar. Porque te permiten contribuir.
-    </div>
-
-    <div class="para upcoming" id="p12" onclick="jump(12)">
-      <div class="tag tag-close">Cierre</div><br>
-      Ese es, en el fondo, el mejor argumento para que más jóvenes — chicos y chicas — elijan esta profesión.<br><br>
-      Muchas gracias.
+      <div class="tag tag-close">Closing</div><br>
+      I wish you a very fruitful conference. And I hope that, beyond the sessions and the panels, you will also find a moment to discover our city. Cartagena has been welcoming people from across the Mediterranean for more than two thousand years. Today, it is delighted to do so once more.<br><br>
+      Thank you.
     </div>
 
   </div>
 
   <div id="nav">
-    <button id="prevBtn" onclick="move(-1)" disabled>← Atrás</button>
-    <button id="nextBtn" onclick="move(1)">Siguiente →</button>
+    <button id="prevBtn" onclick="move(-1)" disabled>← Back</button>
+    <button id="nextBtn" onclick="move(1)">Next →</button>
   </div>
 
 </div>
 <script>
 var current = 0;
-var total = 13;
+var total = 8;
 
 function updateCounter() {
   document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
