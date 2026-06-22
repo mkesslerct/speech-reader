@@ -109,7 +109,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
       <label for="lh">≡</label>
       <input type="range" id="lh" min="1.5" max="2.4" value="1.8" step="0.1" oninput="updateLH()">
     </div>
-    <span id="counter">1 / 8</span>
+    <span id="counter">1 / 7</span>
   </div>
 
   <div id="progress-bar"><div id="progress-fill"></div></div>
@@ -121,7 +121,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
     </div>
 
     <div class="para upcoming" id="p1" onclick="jump(1)">
-      I think it is fair to say that few universities in Europe are as naturally predisposed to a conference on the blue economy as ours. Step outside this building and you will understand why. To one side, you have one of the most technologically advanced shipbuilding projects currently under way in Europe — the construction of the new submarine for the Spanish Navy. To the other, the sports and leisure port. And just beyond, the commercial harbour.
+      I think it is fair to say that there are few places in Europe which are as naturally predisposed to a conference on the blue economy as ours. Step outside this building and you will understand why. To one side, you have one of the most technologically advanced shipbuilding projects currently under way in Europe — the construction of the new submarine for the Spanish Navy. To the other, the sports and leisure port. And just beyond, the commercial harbour.
     </div>
 
     <div class="para upcoming" id="p2" onclick="jump(2)">
@@ -133,19 +133,15 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
     </div>
 
     <div class="para upcoming" id="p4" onclick="jump(4)">
-      Because there is something I believe deeply: progress in innovation — particularly the kind of technologically driven, sustainability-oriented innovation that the blue economy demands — cannot be achieved by any single actor working alone. It requires collaboration. It requires universities and research centres bringing rigour and knowledge. It requires companies and startups bringing agility and market vision. It requires public administrations creating the frameworks and the trust within which all of this can happen. And it requires the coastal communities — the fishers, the port workers, the local entrepreneurs — who are both the beneficiaries and the custodians of what we are trying to protect and develop.
+      Because there is something I believe deeply: progress in innovation — particularly the kind of technologically driven, sustainability-oriented innovation that the blue economy demands — cannot be achieved by any single actor working alone. It requires collaboration. It requires universities and research centres bringing rigour and knowledge. It requires companies and startups bringing agility and market vision. It requires public administrations creating the frameworks and the trust within which all of this can happen. And it requires the coastal communities — the fishers, the port workers, the local entrepreneurs — who are both the beneficiaries and the custodians of what we are trying to protect and develop. What MED-Hubs has done is create a space where all of these actors can meet, test ideas, and build something together across borders. That is no small achievement.
     </div>
 
     <div class="para upcoming" id="p5" onclick="jump(5)">
-      What MED-Hubs has done is create a space where all of these actors can meet, test ideas, and build something together across borders. That is no small achievement.
+      <div class="tag tag-close">Closing</div><br>
+      So I want to thank the organisers, the partners, and especially all of you who have travelled here from across the Mediterranean to share your expertise, your projects, and your perspectives.
     </div>
 
     <div class="para upcoming" id="p6" onclick="jump(6)">
-      <div class="tag tag-close">Closing</div><br>
-      So I want to thank the organisers, the partners, and especially all of you who have travelled here from across the Mediterranean to share your expertise, your projects, and your perspectives. The debates ahead of us today are not only timely — they are necessary.
-    </div>
-
-    <div class="para upcoming" id="p7" onclick="jump(7)">
       <div class="tag tag-close">Closing</div><br>
       I wish you a very fruitful conference. And I hope that, beyond the sessions and the panels, you will also find a moment to discover our city. Cartagena has been welcoming people from across the Mediterranean for more than two thousand years. Today, it is delighted to do so once more.<br><br>
       Thank you.
@@ -161,7 +157,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
 </div>
 <script>
 var current = 0;
-var total = 8;
+var total = 7;
 
 function updateCounter() {
   document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
