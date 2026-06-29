@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Blue Economy">
-<title>Blue Economy — MED-Hubs 2026</title>
+<meta name="apple-mobile-web-app-title" content="My Speech">
+<title>My Speech</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
@@ -20,6 +20,7 @@
   --done: #b4b2a9;
   --current-bg: #f0f4fa;
   --current-border: #b5d4f4;
+  --tag-q-bg: #faeeda; --tag-q-text: #633806;
   --tag-close-bg: #eaf3de; --tag-close-text: #27500a;
 }
 
@@ -30,6 +31,7 @@
     --border: rgba(255,255,255,0.1);
     --accent: #85b7eb; --done: #444441;
     --current-bg: #0c2240; --current-border: #185fa5;
+    --tag-q-bg: #412402; --tag-q-text: #fac775;
     --tag-close-bg: #173404; --tag-close-text: #c0dd97;
   }
 }
@@ -78,6 +80,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   text-transform: uppercase; letter-spacing: 0.07em;
   padding: 2px 8px; border-radius: 99px; margin-bottom: 7px;
 }
+.tag-q     { background: var(--tag-q-bg);     color: var(--tag-q-text); }
 .tag-close { background: var(--tag-close-bg); color: var(--tag-close-text); }
 
 #nav {
@@ -106,10 +109,10 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
       <span class="sval" id="fsizeval">20px</span>
     </div>
     <div class="sg">
-      <label for="lh">≡</label>
+      <label for="lh">&#8801;</label>
       <input type="range" id="lh" min="1.5" max="2.4" value="1.8" step="0.1" oninput="updateLH()">
     </div>
-    <span id="counter">1 / 7</span>
+    <span id="counter">1 / 13</span>
   </div>
 
   <div id="progress-bar"><div id="progress-fill"></div></div>
@@ -117,47 +120,71 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   <div id="scroll-area">
 
     <div class="para current" id="p0" onclick="jump(0)">
-      Good morning, everyone. On behalf of the Polytechnic University of Cartagena, it is my great pleasure to welcome you all to this Mediterranean Blue Economy Conference. We are truly honoured to host this event, and I hope that your time here in Cartagena will be both productive and enjoyable.
+      Muy buenos días a todos y a todas.
     </div>
 
     <div class="para upcoming" id="p1" onclick="jump(1)">
-      I think it is fair to say that there are few places in Europe which are as naturally predisposed to a conference on the blue economy as ours. Step outside this building and you will understand why. To one side, you have one of the most technologically advanced shipbuilding projects currently under way in Europe — the construction of the new submarine for the Spanish Navy. To the other, the sports and leisure port. And just beyond, the commercial harbour.
+      Es para mí un honor abrir, un año más, este Aula Permanente de Seguridad y Defensa, que celebra ya su undécima edición. Cuando el año pasado presentábamos este curso, decíamos que resultaba especialmente oportuno por la incertidumbre del momento. Un año después, esa afirmación se confirma con más fuerza todavía. Seguimos viviendo tiempos de incertidumbre estratégica: comprenderlos exige un esfuerzo riguroso y este curso nos ayuda a ello.
     </div>
 
     <div class="para upcoming" id="p2" onclick="jump(2)">
-      We are, quite literally, surrounded by the sea and by the industries, institutions, and communities that depend on it. This is not coincidence — it is the very essence of what this university is. UPCT was built on the idea that a technological university must be deeply rooted in its territory, in dialogue with the companies, institutions, and stakeholders that make up its economic and social fabric. The sea, in our case, is that fabric.
+      Quiero saludar la presencia de los cadetes de la Academia General del Aire que nos acompañan estos días, así como a las autoridades, mandos y representantes institucionales presentes en esta sala.
     </div>
 
     <div class="para upcoming" id="p3" onclick="jump(3)">
-      It is therefore entirely fitting that we are associated with the MED-Hubs project and with this conference. Hosting you here is not simply a matter of providing a venue — it reflects a genuine strategic alignment. The work being done through MED-Hubs resonates directly with the specialisation lines of Campus Mare Nostrum and with the Smart Specialisation Strategy of the Region of Murcia, which identifies the blue economy as one of the key pillars for regional development and competitiveness. This conference sits at the intersection of European ambition and local reality, and that is precisely where universities like ours must be present.
+      Como cada año, el programa destaca por la calidad y la variedad de sus ponentes: diplomáticos, militares, analistas, profesores universitarios y expertos en seguridad y defensa nos ofrecerán, desde distintas trayectorias y especialidades, una mirada rica y plural sobre los grandes ejes de la geopolítica actual.
     </div>
 
     <div class="para upcoming" id="p4" onclick="jump(4)">
-      Because there is something I believe deeply: progress in innovation — particularly the kind of technologically driven, sustainability-oriented innovation that the blue economy demands — cannot be achieved by any single actor working alone. It requires collaboration. It requires universities and research centres bringing rigour and knowledge. It requires companies and startups bringing agility and market vision. It requires public administrations creating the frameworks and the trust within which all of this can happen. And it requires the coastal communities — the fishers, the port workers, the local entrepreneurs — who are both the beneficiaries and the custodians of what we are trying to protect and develop. What MED-Hubs has done is create a space where all of these actors can meet, test ideas, and build something together across borders. That is no small achievement.
+      Quiero detenerme en una presencia que tiene para nosotros un significado especial: la de don Federico Trillo, cartagenero, exministro de Defensa y exembajador de España en el Reino Unido. Contar con su visión, forjada desde los más altos puestos de responsabilidad del Estado, es un privilegio para esta Aula y para esta Universidad.
     </div>
 
     <div class="para upcoming" id="p5" onclick="jump(5)">
-      <div class="tag tag-close">Closing</div><br>
-      So I want to thank the organisers, the partners, and especially all of you who have travelled here from across the Mediterranean to share your expertise, your projects, and your perspectives.
+      Para la Universidad Politécnica de Cartagena, este curso es una muestra de una relación que cultivamos con convicción: la que mantenemos con las Fuerzas Armadas. Una relación que se expresa de forma permanente a través de nuestro Centro Universitario de la Defensa, y que se extiende a la Armada a través de la Cátedra Jerónimo de Ayanz y del trabajo de nuestros investigadores en tecnologías de uso dual.
     </div>
 
     <div class="para upcoming" id="p6" onclick="jump(6)">
-      <div class="tag tag-close">Closing</div><br>
-      I wish you a very fruitful conference. And I hope that, beyond the sessions and the panels, you will also find a moment to discover our city. Cartagena has been welcoming people from across the Mediterranean for more than two thousand years. Today, it is delighted to do so once more.<br><br>
-      Thank you.
+      Quiero agradecer expresamente a quienes han hecho posible este curso: a sus codirectores, el coronel del Regimiento de Artillería Antiaérea 73 y Ana Alonso, directora del curso en la Universidad; a sus coordinadores, el coronel (R) Gabriel Martínez Valera y Samuel Morales; y a cuantos colaboran en su organización año tras año.
+    </div>
+
+    <div class="para upcoming" id="p7" onclick="jump(7)">
+      Llegar a la undécima edición es, en sí mismo, la mejor demostración de la relevancia de esta iniciativa. Pero el esfuerzo que supone organizarla cada año también merece nuestro reconocimiento.
+    </div>
+
+    <div class="para upcoming" id="p8" onclick="jump(8)">
+      Quiero mencionar de forma especial a la Asociación para el Fomento de la Cultura de Seguridad y Defensa, con quien la UPCT acaba de firmar un convenio de colaboración en materia de formación, divulgación e investigación. Y a su presidente, Carlos Rubén Fernández, que se incorporará a mitad de curso.
+    </div>
+
+    <div class="para upcoming" id="p9" onclick="jump(9)">
+      Gracias también a las instituciones colaboradoras: el Estado Mayor Conjunto de la Defensa, la Escuela de Guerra y Liderazgo del Ejército de Tierra, el Centro Superior de Estudios de la Defensa Nacional — con el Instituto de Estudios Estratégicos y la Escuela Superior de Estudios de la Defensa —, la Secretaría General de Política de Defensa, el Instituto Choiseul, Murcia Economía y la empresa Electronic Evidence.
+    </div>
+
+    <div class="para upcoming" id="p10" onclick="jump(10)">
+      <div class="tag tag-close">Cierre</div><br>
+      La defensa no es solo una tarea de las Fuerzas Armadas: es un esfuerzo colectivo, una responsabilidad de la sociedad en su conjunto. Las universidades y los centros de investigación tienen un papel en ello — generando conocimiento, formando personas capaces de pensar estos retos con rigor y tendiendo puentes entre el mundo académico y el de la seguridad y la defensa. Eso es lo que hacemos aquí.
+    </div>
+
+    <div class="para upcoming" id="p11" onclick="jump(11)">
+      <div class="tag tag-close">Cierre</div><br>
+      Con este espíritu, doy por inaugurado este curso y deseo a todos los ponentes y participantes unas jornadas tan provechosas como las de las ediciones anteriores.
+    </div>
+
+    <div class="para upcoming" id="p12" onclick="jump(12)">
+      <div class="tag tag-close">Cierre</div><br>
+      Muchas gracias.
     </div>
 
   </div>
 
   <div id="nav">
-    <button id="prevBtn" onclick="move(-1)" disabled>← Back</button>
-    <button id="nextBtn" onclick="move(1)">Next →</button>
+    <button id="prevBtn" onclick="move(-1)" disabled>&#8592; Atrás</button>
+    <button id="nextBtn" onclick="move(1)">Siguiente &#8594;</button>
   </div>
 
 </div>
 <script>
 var current = 0;
-var total = 7;
+var total = 13;
 
 function updateCounter() {
   document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
